@@ -2,7 +2,13 @@
   "name": "sunjs",
   "version": "1.0.0",
   "description": "Computes the sunrise, sunset, and daytime duration for a given location and date",
-  "main": "index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "scripts": {
     "check": "biome check src --write",
     "format": "biome format src --write",
@@ -23,5 +29,8 @@
     "@biomejs/biome": "^1.9.4",
     "@types/node": "^22.15.18",
     "typescript": "^5.8.3"
+  },
+  "publishConfig": {
+    "@lwe8:registry": "https://npm.pkg.github.com"
   }
 }
